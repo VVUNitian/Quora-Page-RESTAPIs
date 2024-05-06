@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Route</title>
+</head>
+<body>
+    <h1>Update your post..</h1>
+    <form method="post" action="/posts/<%= postid.id %>?_method=PATCH">
+        <h2><%= postid.username %></h2>
+       <textarea rows="10" cols="30" name="content"><%= postid.content %></textarea> <!--assign a name to textarea..-->
+        <button style="display: inline;">Update</button>
+    </form>
+</body>
+</html>

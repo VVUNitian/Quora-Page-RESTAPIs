@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL Posts</title>
+    <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+    <h1>Quora Page</h1>
+
+    <% for( Post of posts ) { %>
+        <div class="division">
+            <h3><%= Post.id %></h3>
+            <h3> <%= Post.username %> </h3>
+            <h4> <%= Post.content%> </h4>
+            <a href="http://localhost:8080/posts/<%= Post.id %>">Show Details</a><!--colon nahi dena post id seyy pehle...-->           
+            <a href="http://localhost:8080/newposts/<%= Post.id %>">Update Post</a>
+            <form method="post" action="http://localhost:8080/posts/<%= Post.id %>?_method=Delete">
+                <br>
+                <button>Delete Post</button>
+            </form>
+        </div>
+    <% } %>
+    <br>
+    <br>
+    <br>
+<a href="http://localhost:8080/posts/new">Create New Post</a>
+</body>
+</html>
